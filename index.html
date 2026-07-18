@@ -4,9 +4,267 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GFG</title>
+    <title>My Blog - Thoughts & Stories</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 1rem;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #667eea;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            color: white;
+        }
+
+        .blog-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .read-more {
+            color: #667eea;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #764ba2;
+        }
+
+        .about-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }
+
+        .about-section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .about-section p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello world Webpage</h1>
+    <header>
+        <h1>Welcome to My Blog</h1>
+        <p>Sharing thoughts, ideas, and experiences</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#posts">Blog Posts</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="about-section" id="about">
+            <h2>About Me</h2>
+            <p>Welcome to my personal blog! This is a space where I share my thoughts, experiences, and insights on topics I'm passionate about. I hope you find something interesting to read.</p>
+        </section>
+
+        <section id="posts">
+            <h2 style="color: #667eea; margin-bottom: 1.5rem; font-size: 1.8rem;">Latest Blog Posts</h2>
+            <div class="blog-posts">
+                <article class="blog-card">
+                    <div class="blog-card-header">
+                        <h3>Your First Blog Post</h3>
+                        <span class="blog-card-meta">Posted on July 18, 2026</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <p>This is a sample blog post. Replace this with your own content and share your thoughts with the world.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-header">
+                        <h3>Getting Started</h3>
+                        <span class="blog-card-meta">Posted on July 15, 2026</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <p>Learn how to set up your personal blog and start sharing your unique perspective with your audience.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-card-header">
+                        <h3>Tips & Tricks</h3>
+                        <span class="blog-card-meta">Posted on July 10, 2026</span>
+                    </div>
+                    <div class="blog-card-content">
+                        <p>Discover useful tips and tricks to improve your blogging experience and engage with your readers.</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <p>&copy; 2026 My Blog. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+        </div>
+        <p>Built with passion 💙</p>
+    </footer>
 </body>
 </html>
